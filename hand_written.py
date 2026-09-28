@@ -7,7 +7,9 @@ RUN_PROFILE = {"ratio": 9 / 5, "offset": 32}
 def celsius_to_fahrenheit(c):
     return c * RUN_PROFILE["ratio"] + RUN_PROFILE["offset"]
 
-
 if __name__ == "__main__":
-    c = float(input("Celsius: "))
-    print(f"{c}C = {celsius_to_fahrenheit(c)}F")
+    try:
+        c = float(input("Celsius: "))
+        print(f"{c}C = {celsius_to_fahrenheit(c)}F")
+    except ValueError:
+        print("Please enter a number, for example 36.6")
